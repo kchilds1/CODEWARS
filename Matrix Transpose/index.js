@@ -14,7 +14,7 @@ function transpose(matrix) {
       transposed[j][i] = matrix[i][j];
     }
   }
-  return transposed;
+  console.log(transposed);
 }
 
 /*finding the transpose of a matrix is a new matrix formed by swapping the rows and columns of the 
