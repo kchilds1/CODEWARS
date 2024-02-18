@@ -1,26 +1,24 @@
 function solution(str){
-    let newStr = [];
-    let pairs = [];
-     for(let i = 0; i < str.length; i++){
-       newStr.push(str[i]);
-     }
-    if (newStr % 2 !== 0){
-      newStr.push('_');
+  //new array to hold the two character strings
+ let newArray = [];
+  //array for the split
+  let splitStr = str.split('');
+  //keep the count of strings in splitStr
+  let count = 0;
+  //loop through each string
+  for(let i = 0; i < splitStr.length;i++){
+    count++;
     }
-    for(let j = 0; j < newStr.length; j += 2){
-      //make sure there isn't another element after the current element
-      if(j + 1 < newStr.length){
-        pairs.push(newStr[j] + newStr[j + 1]);
-      }
-    }
-    return pairs;
+  //if there is an odd number of strings, I'm adding an underscore
+    if(count % 2 !== 0){
+      splitStr.push("_");
   }
-  solution("")
-  solution("abcdef")
-  solution("abcdefg")
-  //split into individual stings
-  //if string is an odd number add _
-  //start putting the pairs together making sure each iteration is incremented by two
-  //make sure there isn't any more letters before moving forward to pushing into the pairs array
-  //Push the letter pairs to the pairs array
-  //return pairs
+  //iterate through splitStr with a step of 2 to combine consecutive elements
+  for(let j = 0; j < splitStr.length - 1; j += 2){
+    //pushing the combination to newArray array
+    newArray.push(splitStr[j] + splitStr[j+1])
+  }
+  return newArray
+}
+
+solution('abcde');
